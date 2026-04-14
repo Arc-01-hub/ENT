@@ -1,0 +1,17 @@
+.header-dash{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+    border: 1px solid #3333334f;
+
+}
+.app-name{
+    height: 100%;
+    width: 249px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #3333334f;
+}

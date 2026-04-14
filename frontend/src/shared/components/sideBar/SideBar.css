@@ -1,0 +1,32 @@
+.sidebar{
+    height: 90vh;
+    width: 250px;
+    border-right: 1px solid #3333334f;
+}
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+}
+li{
+    height: 100%;
+}
+li a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+    padding: 15px;
+}
+li a.active{
+    background: #5e14de;
+    background: linear-gradient(90deg, rgba(94, 20, 222, 1) 0%, rgba(199, 0, 199, 0.85) 99%);
+    color: white;
+    font-size: 18px;
+    
+}
+li a:hover{
+box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;}
