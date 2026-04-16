@@ -3,15 +3,16 @@ import './SideBar.css';
 import { GiPapers } from 'react-icons/gi';
 import { PiExamDuotone } from 'react-icons/pi';
 import { FaUsers } from 'react-icons/fa';
+import { NavLink } from 'react-router-dom';
 
 export const SideBar = () => {
   return (
     <div className="sidebar">
         <ul>
-            <li><a href="/admin" className='active'> <MdOutlineDashboard />Dashboard</a></li>
-            <li><a href="/courses"><GiPapers /> Courses</a></li>
-            <li><a href="/exams"><PiExamDuotone />Exams</a></li>
-            <li><a href="/admin/users"><FaUsers />Users</a></li>
+            <li><NavLink to="/admin" > <MdOutlineDashboard />Dashboard</NavLink></li>
+            <li><NavLink to="/courses"><GiPapers /> Courses</NavLink></li>
+            <li><NavLink to="/exams"><PiExamDuotone />Exams</NavLink></li>
+            <li><NavLink to="/admin/users"><FaUsers />Users</NavLink></li>
         </ul>
     </div>
   );

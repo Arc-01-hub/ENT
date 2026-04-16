@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ProtectedRoute from '../core/guards/ProtectedRoute';
 import Dashboard from '../features/dashboard/Dashboard';
 import keycloak from '../core/auth/keycloak';
@@ -8,34 +8,29 @@ import { PDashboard } from '../features/PDashboard/PDashboard';
 import Users from '../features/users/Users';
 
 const AppRoutes = () => {
-  const logout = () => {
-  localStorage.clear();
-  sessionStorage.clear();
+  const handleLogout = () => {
+    localStorage.clear();
+    sessionStorage.clear();
+    keycloak.logout({ redirectUri: "http://localhost:5173" });
+  };
 
-  keycloak.logout({
-    redirectUri: "http://localhost:5173"
-  });
-};
+  const HomePage = () => (
+    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '20px' }}>
+      <span>Welcome, {authProvider.getUser()?.username}</span>
+      <button onClick={handleLogout}>Logout</button>
+    </div>
+  );
+
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<>
-          <button onClick={logout}>Logout</button>
-          {authProvider.getUser()?.username}
-        </>} />
-        <Route path='/admin' element={<ProtectedRoute role="ADMIN"><Dashboard /></ProtectedRoute>} >
-          <Route path="users" element={<ProtectedRoute role="ADMIN"><Users /></ProtectedRoute>} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/admin" element={<ProtectedRoute role="ADMIN"><Dashboard /></ProtectedRoute>}>
+          <Route path="users" element={<Users />} />
         </Route>
-          <Route path='/professor' element={<ProtectedRoute role="PROF"><PDashboard /></ProtectedRoute>} >
-          {/* <Route path="courses" element={<ProtectedRoute role="PROF"><CoursesPage /></ProtectedRoute>} /> */}
-          {/* <Route path="exams" element={<ProtectedRoute role="PROF"><ExamsPage /></ProtectedRoute>} /> */}
-        </Route>
-
-          <Route path='/student' element={<ProtectedRoute role="STUDENT"><SDashboard /></ProtectedRoute>} >
-          {/* <Route path="courses" element={<ProtectedRoute role="STUDENT"><CoursesPage /></ProtectedRoute>} /> */}
-          {/* <Route path="exams" element={<ProtectedRoute role="STUDENT"><ExamsPage /></ProtectedRoute>} /> */}
-        </Route>
-        <Route path="/unauthorized" element={<div>Unauthorized Access</div>} />
+        <Route path="/professor" element={<ProtectedRoute role="PROF"><PDashboard /></ProtectedRoute>} />
+        <Route path="/student" element={<ProtectedRoute role="STUDENT"><SDashboard /></ProtectedRoute>} />
+        <Route path="/unauthorized" element={<div style={{ padding: '20px' }}>Unauthorized Access</div>} />
       </Routes>
     </Router>
   );

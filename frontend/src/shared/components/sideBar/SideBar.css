@@ -30,7 +30,17 @@ li a.active{
     color: black;
     font-size: 18px;
     position: relative;
-    
+    animation: activeLinkAnimation 0.3s ease;
+}
+@keyframes activeLinkAnimation {
+    0% {
+        transform: translateX(-10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 li a.active::after{
     content: "";
