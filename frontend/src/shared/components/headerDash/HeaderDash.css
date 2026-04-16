@@ -15,3 +15,34 @@
     justify-content: center;
     border-right: 1px solid #3333334f;
 }
+.app-name h3{
+    font-size: 20px;
+    font-weight: bold;
+    color: #05577e;
+}
+.app-name span{
+    font-size: 30px;
+    color: #1178a8;
+}
+.profile{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-right: 20px;
+}
+.profile_info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.profile-pic{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.drop_down_profile{
+    background: none;
+    border: none;
+    cursor: pointer;
+}

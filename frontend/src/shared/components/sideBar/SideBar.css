@@ -20,13 +20,32 @@ li a{
     text-decoration: none;
     color: black;
     padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #050505b7;
+    transition: all 0.3s ease;
 }
 li a.active{
-    background: #5e14de;
-    background: linear-gradient(90deg, rgba(94, 20, 222, 1) 0%, rgba(199, 0, 199, 0.85) 99%);
-    color: white;
+    color: black;
     font-size: 18px;
+    position: relative;
+    
+}
+li a.active::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 4px;
+    left: 0;
+    top: 0;
+    background-color: #1178a8;   
+}
+li a.active svg{
+    color: #1178a8;
     
 }
 li a:hover{
-box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;}
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+    padding-left: 20px;
+}

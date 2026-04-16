@@ -35,9 +35,15 @@
 }
 
 .dashboard-content {
-  margin-top: 30px;
+  width: calc(100% - 250px);
+  height: 90vh;
+  overflow: auto;
 }
 
+.dashboard-container {
+  display: flex;
+  flex-direction: row;
+  }
 @keyframes fadeIn {
   from {
     opacity: 0;

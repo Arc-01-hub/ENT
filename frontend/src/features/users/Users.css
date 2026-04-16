@@ -1,0 +1,190 @@
+
+.users_header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    
+}
+.users_header h1{
+    font-size: 24px;
+    color: #333;
+}
+.users_header .users_actions{
+    display: flex;
+    gap: 10px;
+}
+.users_header button{
+    background-color: transparent;
+    border: 1px solid #3333334f;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+}
+.users_header button:hover{
+    background-color: #1178a828;
+}
+.users_header button.add_user_btn{
+    border-color: #1178a891;
+    color: #1178a8ad;
+}
+/* ------------------ */
+.users_search{
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.users_search input{
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #3333334f;
+    border-radius: 5px;
+}
+
+.users_search .search_filter{
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid #3333334f;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 30px;
+    overflow: hidden;
+}
+.users_search .search_filter div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    height: 100%;
+}
+.users_search .search_filter div.active{
+    background-color: #3333334f;
+    
+}
+/* ------------------ */
+
+.users_table{
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.users_table table{
+    width: 90%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.users_table table th{
+    color: #555;
+    background-color: #3333334f;
+    font-weight: 600;
+}
+.users_table thead {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+/* MAKE TBODY SCROLLABLE */
+.users_table tbody {
+    display: block;
+    max-height: 90px; 
+    overflow-y: auto;
+    width: 100%;
+}
+.users_table tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+.users_table table th, .users_table table td{
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #3333334f;
+}
+.users_table table tr:hover{
+    background-color: #1178a81a;
+}
+.users_table table tr:last-child td{
+    border-bottom: none;
+}
+.users_table table td {
+    color: #000;
+    padding: 13px;
+    /* background-color: white; */
+    font-size: 14px;
+    /* height: 50px; */
+}
+.users_table .role_style, .users_table .status_style{
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    border-radius: 20px;
+}
+.users_table .role_style{
+    background-color: #1178a8ad;
+}
+.users_table .status_style.active{
+    background-color: rgba(0, 128, 0, 0.507);
+}
+.users_table .status_style.inactive{
+    background-color: rgba(255, 0, 0, 0.473);
+}
+.users_table .actions{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.users_table .actions button{
+    background-color: transparent;
+    border: 1px solid #3333334f;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+}
+.users_table .actions button:hover{
+    background-color: #1178a828;
+}
+.users_table .actions button.delete_btn{
+    border-color: rgba(255, 0, 0, 0.473);
+    color: rgba(255, 0, 0, 0.473);
+}
+.users_table .actions button.delete_btn:hover{
+    background-color: rgba(255, 0, 0, 0.473);
+    color: white;
+}
+.users_table .actions button.edit_btn{
+    border-color: #1178a8ad;
+    color: #1178a8ad;
+}
+.users_table .actions button.edit_btn:hover{
+    background-color: #1178a8ad;
+    color: white;
+}
+/* ------------------------- */
+.users .create-user-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}

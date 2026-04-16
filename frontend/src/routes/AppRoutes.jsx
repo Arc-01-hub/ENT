@@ -5,6 +5,7 @@ import keycloak from '../core/auth/keycloak';
 import authProvider from '../core/auth/authProvider';
 import { SDashboard } from '../features/SDashboard/SDashboard';
 import { PDashboard } from '../features/PDashboard/PDashboard';
+import Users from '../features/users/Users';
 
 const AppRoutes = () => {
   const logout = () => {
@@ -23,7 +24,7 @@ const AppRoutes = () => {
           {authProvider.getUser()?.username}
         </>} />
         <Route path='/admin' element={<ProtectedRoute role="ADMIN"><Dashboard /></ProtectedRoute>} >
-          {/* <Route path="users" element={<ProtectedRoute role="ADMIN"><UsersPage /></ProtectedRoute>} /> */}
+          <Route path="users" element={<ProtectedRoute role="ADMIN"><Users /></ProtectedRoute>} />
         </Route>
           <Route path='/professor' element={<ProtectedRoute role="PROF"><PDashboard /></ProtectedRoute>} >
           {/* <Route path="courses" element={<ProtectedRoute role="PROF"><CoursesPage /></ProtectedRoute>} /> */}
